@@ -1,0 +1,308 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 14, 2015, 11:31:26 AM
+    Author     : rsee
+*/
+
+@import "variables", "grids", "util"; 
+
+body {
+    color: $body-text-color;
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+    font-size: $default-text-size;
+    margin: 0;
+    background: $secondary-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.43;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+button.custom-button, a.custom-button {
+    color: $primary-color !important;
+    text-decoration: none !important;
+    background-color: #fff;
+    border-color: $dark-blue;
+    font-size: 1.2em;
+    padding: 20px 95px;
+    
+    &:hover, &:focus, &:active {
+        background-color: #e6e6e6;
+        border-color: #adadad;
+        color: #333;
+    }
+}
+
+button.default-button, a.default-button {
+    color: $primary-color !important;
+    text-decoration: none !important;
+    background-color: #fff;
+    border-color: $primary-color;
+    
+    &:hover, &:focus, &:active {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: white !important;
+    }
+}
+
+button.custom-blue-button, a.custom-blue-button {
+    color: white !important;
+    text-decoration: none !important;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    font-size: 1.2em;
+    padding: 20px 95px;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    
+    &:hover, &:focus, &:active {
+        background-color: white;
+        border-color: $primary-color;
+        color: $primary-color !important;
+    }
+}
+.container {
+    background: white;
+}
+
+.container.header {
+    background: url(../assets/dropbox-for-business-files.png) repeat-x $primary-color 0px 500px;
+    color: white;
+    
+    // slide in the background image;
+    -webkit-animation: slidein 1s ease-in 2s forwards;
+    -moz-animation: slidein 1s ease-in 2s forwards;
+    animation: slidein 1s ease-in 2s forwards; 
+    
+    a {
+        color: white;
+    }
+    
+    .menu-column {
+        padding-top: 50px;
+        
+        img.logo {
+            width: 38px;
+        }
+        
+        ul {
+            padding-left: 0;
+            li {
+                list-style: none;
+                
+                a { 
+                    &.active {
+                        font-weight: 600;
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    .center-column {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        
+        .inner-wrapper {
+            padding: 0px 110px;
+            
+            a {
+                color: white;
+                text-decoration: underline;
+            }
+            
+            .custom-button {
+                margin: 20px 0;
+            }
+            
+            .slogan {
+                display: block;
+            }
+        }
+    }
+}
+
+.container.business {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid $tertiary-color;
+    
+    .dropbox-business-features {
+        margin-top: 25px;
+        margin-bottom: 45px;
+        
+        .feature-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.container.carousel {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    
+    .inner-wrapper {
+        width: 40%;
+        display: inline-block;
+    }
+    
+    .carousel-wrapper {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .carousel-text {
+        margin-bottom: 45px;
+        width: 50%;
+        display: inline-block;
+    }
+}
+
+.container.video {
+    $video-wrapper-height: 500px;
+    background: url(../assets/video-still.jpg) no-repeat top center;
+    height: $video-wrapper-height;
+    
+    img.play-button {
+        position: relative;
+        top: 200px;
+        cursor: pointer;
+    }
+    
+    button.play-button {
+        position: relative;
+        cursor: pointer;
+        top: 200px;
+        width: 106px;
+        height: 106px;
+        border: none;
+        background: url(../assets/player_large.png) no-repeat;
+        text-indent: -99999px;
+        
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    
+    .video-container {
+        background: black;
+        height: 100%;
+        width: 100%;
+        video {
+            height: 100%;
+        }
+    }
+}
+
+.container.team-in-sync {
+    padding-top: 70px;
+    padding-bottom: 75px;
+    
+    .custom-blue-button {
+        margin-top: 35px;
+        margin-bottom: 30px;
+    }
+    
+    a {
+        color: $primary-color;
+    }
+}
+
+footer {
+    .container.footer {
+        font-size: $small-text-size;
+        padding-top: 65px;
+        padding-bottom: 120px;
+        border-top: 1px solid $tertiary-color;
+        
+        .footer-section-title {
+            color: $tertiary-color;
+            font-weight: bold;
+        }
+        
+        ul {
+            padding-left: 0;
+            
+            li {
+                list-style: none;
+                
+                a {
+                    color: $tertiary-color;
+                }
+            }
+        }
+        
+        a.lang-selector {
+            color: $tertiary-color;
+        }
+    }
+}
+
+/*
+ * Animations
+*/
+@-webkit-keyframes slidein {
+    from {
+        background-position: 0px 500px;
+        opacity: 0;
+    }
+
+    to {
+        background-position: 0px 0px;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes slidein {
+    from {
+       background-position: 0px 500px;
+       opacity: 0;
+    }
+
+    to {
+        background-position: 0px 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    from {
+        background-position: 0px 500px;
+        opacity: 0;
+    }
+
+    to {
+        background-position: 0px 0px;
+        opacity: 1;
+    }
+}
