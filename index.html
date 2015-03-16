@@ -59,12 +59,12 @@ and open the template in the editor.
         </div>
         
         <!-- Why Dropbox for business section -->
-        <div class="container business">
+        <div class="container business" >
             <div class="row text-center medium-text-size">
                 Why Dropbox for Business?
             </div>
-            <div class="row dropbox-business-features">
-                <div class="col-lg-4 text-center">
+            <div class="row dropbox-business-features" id="business-container" style="margin-left: -170px;">
+                <div id="devices" class="col-lg-4 text-center" style="position: relative; margin-left: 90px; opacity: 0; -webkit-filter: blur(1px); -moz-filter: blur(1px);-o-filter: blur(1px);-ms-filter: blur(1px);filter: blur(1px);">
                     <img src="assets/dropbox-for-business-why-devices.png" alt="Devices" />
                     <div class="medium-text-size feature-title">The power to do more</div>
                     <div>
@@ -72,25 +72,25 @@ and open the template in the editor.
                         300 million users. Let team members instantly sync and share data, so they can work together from anywhere.
                     </div>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div id="watch" class="col-lg-4 text-center" style="position: absolute; margin-left: 420px; opacity: 0; -webkit-filter: blur(1px); -moz-filter: blur(1px);-o-filter: blur(1px);-ms-filter: blur(1px);filter: blur(1px);">
                     <img src="assets/dropbox-for-business-why-watch.png" alt="Watch" />
                     <div class="medium-text-size feature-title">The power to do more</div>
                     <div>
-                        Watch productivity souar with the solution loved by over 
-                        300 million users. Let team members instantly sync and share data, so they can work together from anywhere.
+                        Dropbox for Business makes data access safe, reliable, and fast. And with powerful admin controls, IT can protect
+                        information both inside and outside your organization.
                     </div>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div id="key" class="col-lg-4 text-center" style="position: absolute; margin-left: 750px; opacity: 0; -webkit-filter: blur(1px); -moz-filter: blur(1px);-o-filter: blur(1px);-ms-filter: blur(1px);filter: blur(1px);">
                     <img src="assets/dropbox-for-business-why-key.png" alt="Key" />
                     <div class="medium-text-size feature-title">The power to do more</div>
                     <div>
-                        Watch productivity souar with the solution loved by over 
-                        300 million users. Let team members instantly sync and share data, so they can work together from anywhere.
+                        Break the cycle of training sessions, support tickets, and lost productivity. Give employees the solution they know,
+                        and free IT -- and your team -- to get work done.
                     </div>
                 </div>
             </div>
             <div class="row text-center medium-text-size">
-                <a href="#" class="button default-button">Learn more</a>
+                <a id="learn-more" href="#" class="button default-button">Learn more</a>
             </div>
         </div>
         
@@ -105,7 +105,34 @@ and open the template in the editor.
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center carousel-wrapper">
-                    <img src="assets/BCBG.jpg" alt="team" />
+                    <div class="prev">
+                        <a href="#" class="prev-button"><img src="assets/arrow-left.png" /></a>
+                    </div>
+                    <div class="slides-wrapper">
+                        
+                        <ul style="height: 300px;">
+                            <li id="first-slide" style="z-index: 4; margin-left: 0%;" class="active" data-slide-id="1">
+                              <img src="assets/BCBG.jpg" alt="team">
+                            </li>
+                            <li style="z-index: 2; margin-left: 100%;" class="" data-slide-id="2">
+                              <img src="assets/asana.jpg" alt="team 2">
+                            </li>
+                            <li style="z-index: 2; margin-left: 100%;" class="" data-slide-id="3">
+                              <img src="assets/centric.jpg" alt="team 3">
+                            </li>
+                        </ul>
+                        
+                        <div class="bullets-wrapper">
+                            <ol class="bullets">
+                                <li class="active" data-slide="1"></li>
+                                <li class="" data-slide="2"></li>
+                                <li class="" data-slide="3"></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="next">
+                        <a href="#" class="next-button"><img src="assets/arrow-right.png" /></a>
+                    </div>
                 </div>
             </div>
             <div class="row">

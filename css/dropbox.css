@@ -343,9 +343,9 @@ button.custom-blue-button, a.custom-blue-button {
 .container.header {
   background: url(../assets/dropbox-for-business-files.png) repeat-x #007EE5 0px 500px;
   color: white;
-  -webkit-animation: slidein 1s ease-in 2s forwards;
-  -moz-animation: slidein 1s ease-in 2s forwards;
-  animation: slidein 1s ease-in 2s forwards; }
+  -webkit-animation: slidein 1s ease-in 1s forwards;
+  -moz-animation: slidein 1s ease-in 1s forwards;
+  animation: slidein 1s ease-in 1s forwards; }
   .container.header a {
     color: white; }
   .container.header .menu-column {
@@ -381,6 +381,28 @@ button.custom-blue-button, a.custom-blue-button {
     .container.business .dropbox-business-features .feature-title {
       margin-top: 10px;
       margin-bottom: 10px; }
+  .container.business #key {
+    /*        -webkit-filter: blur(5px); -moz-filter: blur(5px);-o-filter: blur(5px);-ms-filter: blur(5px);filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);*/ }
+  .container.business #key.reset, .container.business #watch.reset, .container.business #devices.reset {
+    -moz-transition: margin-left 1s ease-in, opacity 1s ease-in, 1s -moz-filter linear;
+    -webkit-transition: margin-left 1s ease-in, opacity 1s ease-in, 1s -webkit-filter linear;
+    -ms-transition: margin-left 1s ease-in, opacity 1s ease-in, 1s -ms-filter linear;
+    -o-transition: margin-left 1s ease-in, opacity 1s ease-in, 1s -o-filter linear;
+    transition: margin-left 1s ease-in, opacity 1s ease-in, 1s filter linear;
+    -moz-transition: all 0.5s cubic-bezier(0.63, 0.01, 0.52, 1.56);
+    -webkit-transition: all 0.5s cubic-bezier(0.63, 0.01, 0.52, 1.56);
+    -ms-transition: all 0.5s cubic-bezier(0.63, 0.01, 0.52, 1.56);
+    -o-transition: all 0.5s cubic-bezier(0.63, 0.01, 0.52, 1.56);
+    transition: all 0.5s cubic-bezier(0.63, 0.01, 0.52, 1.56);
+    /*        -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(0px);
+            -ms-filter: blur(0px);
+            filter: blur(0px);*/ }
 
 .container.carousel {
   padding-top: 80px;
@@ -391,6 +413,59 @@ button.custom-blue-button, a.custom-blue-button {
   .container.carousel .carousel-wrapper {
     margin-top: 20px;
     margin-bottom: 20px; }
+    .container.carousel .carousel-wrapper .slides-wrapper, .container.carousel .carousel-wrapper .next, .container.carousel .carousel-wrapper .prev {
+      display: inline-block; }
+    .container.carousel .carousel-wrapper .slides-wrapper {
+      background: none repeat scroll 0% 0% transparent;
+      overflow: hidden;
+      position: relative;
+      width: 540px; }
+      .container.carousel .carousel-wrapper .slides-wrapper ul {
+        list-style: outside none none;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+        transform: translateZ(0px); }
+        .container.carousel .carousel-wrapper .slides-wrapper ul li {
+          position: absolute;
+          top: 0px;
+          width: 100%;
+          /*                    &.moving {
+                                  -moz-transition: margin-left .5s ease-in; 
+                                  -webkit-transition: margin-left .5s ease-in;  
+                                  -ms-transition: margin-left .5s ease-in;  
+                                  -o-transition: margin-left .5s ease-in;  
+                                  transition: margin-left .5s ease-in;
+                              }*/ }
+          .container.carousel .carousel-wrapper .slides-wrapper ul li img {
+            width: 540px; }
+    .container.carousel .carousel-wrapper .prev img {
+      padding-bottom: 150px;
+      padding-right: 30px; }
+    .container.carousel .carousel-wrapper .next img {
+      padding-bottom: 150px;
+      padding-left: 30px; }
+    .container.carousel .carousel-wrapper .bullets-wrapper {
+      margin-top: 10px; }
+      .container.carousel .carousel-wrapper .bullets-wrapper ol.bullets {
+        display: block;
+        float: none;
+        margin: 0px auto 30px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        top: 10px; }
+        .container.carousel .carousel-wrapper .bullets-wrapper ol.bullets li {
+          background: #007EE5;
+          cursor: pointer;
+          display: inline-block;
+          float: none;
+          height: 16px;
+          margin-right: 30px;
+          width: 16px;
+          border-radius: 100px; }
+          .container.carousel .carousel-wrapper .bullets-wrapper ol.bullets li.active {
+            background: #4C545A; }
   .container.carousel .carousel-text {
     margin-bottom: 45px;
     width: 50%;
@@ -452,24 +527,18 @@ footer .container.footer {
 */
 @-webkit-keyframes slidein {
   from {
-    background-position: 0px 500px;
-    opacity: 0; }
+    background-position: 0px 500px; }
   to {
-    background-position: 0px 0px;
-    opacity: 1; } }
+    background-position: 0px 0px; } }
 @-moz-keyframes slidein {
   from {
-    background-position: 0px 500px;
-    opacity: 0; }
+    background-position: 0px 500px; }
   to {
-    background-position: 0px 0px;
-    opacity: 1; } }
+    background-position: 0px 0px; } }
 @keyframes slidein {
   from {
-    background-position: 0px 500px;
-    opacity: 0; }
+    background-position: 0px 500px; }
   to {
-    background-position: 0px 0px;
-    opacity: 1; } }
+    background-position: 0px 0px; } }
 
 /*# sourceMappingURL=dropbox.css.map */
