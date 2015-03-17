@@ -107,9 +107,41 @@ $(function(){
         slideCarousel2($(this))
         return false;
     });
+    
+    /*
+     * 
+     * Toggle the offcanvas menu when clicking the hamburger button
+     */
+    $("button.hamburger-button").on("click", function() {
+        var offcanvasMenu = $(".offcanvas-menu");
+        if (offcanvasMenu.hasClass("in")) {
+            closeOffcanvasMenu();
+        } else {
+            openOffcanvasMenu();
+        }
+        
+        
+        return false;
+    });
+    
+    // Close offcanvas menu when click outside of the menu and only when the menu is open
+    $(document).on("click", function(e){
+        if ($(".offcanvas-menu").hasClass("in") && 
+            $(e.target).parents(".offcanvas-menu").length ==0 && 
+            $(e.target).is(":not(.offcanvas-menu")) {
+            closeOffcanvasMenu();
+        }
+    });
 
 });
 
+var openOffcanvasMenu = function () {
+    $(".offcanvas-menu").removeClass("out").addClass("in");
+}
+
+var closeOffcanvasMenu = function () {
+    $(".offcanvas-menu").removeClass("in").addClass("out");
+}
 var slideCarousel2 = function (clickedElement) {
     var currentSlide = $(".slides-wrapper ul li.active");
     var currentSlideId = currentSlide.attr("data-slide-id") * 1;

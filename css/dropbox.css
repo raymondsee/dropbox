@@ -269,6 +269,28 @@ and open the template in the editor.
 .small-text-size {
   font-size: 13px; }
 
+.visible-xs-block,
+.visible-sm-block {
+  display: none !important; }
+
+@media (max-width: 767px) {
+  .visible-xs-block {
+    display: block !important; } }
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-block {
+    display: block !important; } }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important; } }
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important; } }
 body {
   color: #8899A7;
   font-family: "Open Sans","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
@@ -522,6 +544,70 @@ footer .container.footer {
   footer .container.footer a.lang-selector {
     color: #4C545A; }
 
+.navigation-menu {
+  min-height: 50px;
+  border-bottom: 1px solid white;
+  background: #4C545A;
+  padding: 10px 15px; }
+  .navigation-menu .brand {
+    float: right; }
+    .navigation-menu .brand img {
+      height: 40px; }
+  .navigation-menu button.hamburger-button {
+    display: inline;
+    border: 1px solid white;
+    color: #4C545A;
+    background: white;
+    border-radius: 3px;
+    padding: 8px;
+    cursor: pointer; }
+    .navigation-menu button.hamburger-button:hover {
+      background: #EEE;
+      border-color: #EEE; }
+
+.offcanvas-menu {
+  width: 300px;
+  min-width: 300px;
+  background: #4C545A;
+  position: fixed;
+  z-index: 1050;
+  top: 0px;
+  bottom: 0px;
+  overflow-y: auto;
+  border-radius: 0px;
+  height: auto;
+  padding: 20px 0px;
+  font-size: 18px;
+  border-right: 1px solid #777;
+  left: -300px; }
+  .offcanvas-menu.in {
+    -webkit-animation: menuin .5s ease-in-out;
+    -moz-animation: menuin .5s ease-in-out;
+    animation: menuin .5s ease-in-out;
+    left: 0px; }
+  .offcanvas-menu.out {
+    -webkit-animation: menuout .5s ease-in-out;
+    -moz-animation: menuout .5s ease-in-out;
+    animation: menuout .5s ease-in-out;
+    left: -300px; }
+  .offcanvas-menu a.brand {
+    display: block;
+    padding: 10px 15px;
+    font-size: 20px; }
+  .offcanvas-menu a {
+    color: white; }
+  .offcanvas-menu ul {
+    padding-left: 0px; }
+    .offcanvas-menu ul li {
+      list-style: none;
+      padding: 10px 0; }
+      .offcanvas-menu ul li.active {
+        background: #000; }
+      .offcanvas-menu ul li:hover {
+        background: #007EE5; }
+      .offcanvas-menu ul li a {
+        padding: 0 15px; }
+
 /*
  * Animations
 */
@@ -540,5 +626,35 @@ footer .container.footer {
     background-position: 0px 500px; }
   to {
     background-position: 0px 0px; } }
+@-webkit-keyframes menuin {
+  from {
+    left: -300px; }
+  to {
+    left: 0px; } }
+@-moz-keyframes menuin {
+  from {
+    left: -300px; }
+  to {
+    left: 0px; } }
+@keyframes menuin {
+  from {
+    left: -300px; }
+  to {
+    left: 0px; } }
+@-webkit-keyframes menuout {
+  from {
+    left: 0px; }
+  to {
+    left: -300px; } }
+@-moz-keyframes menuout {
+  from {
+    left: 0px; }
+  to {
+    left: -300px; } }
+@keyframes menuout {
+  from {
+    left: 0px; }
+  to {
+    left: -300px; } }
 
 /*# sourceMappingURL=dropbox.css.map */
