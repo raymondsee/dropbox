@@ -63,11 +63,12 @@ $list: ();
 
 @for $i from 1 through $columns {
     .col-xs-#{$i} {
-      width: $i * $column-width + $gutter * ($i - 1);
+      //width: $i * $column-width + $gutter * ($i - 1);
+      width: percentage(($i / $columns));
     }
 }
 
-// Medium devices
+// small devices
 @media (min-width: 768px) {
     $list: ();
     @for $i from 1 through $columns {

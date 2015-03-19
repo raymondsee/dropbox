@@ -15,7 +15,7 @@ body {
     font-family: "Open Sans","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
     font-size: $default-text-size;
     margin: 0;
-    background: $secondary-color;
+    background: #E9EAED;
 }
 
 a {
@@ -77,8 +77,8 @@ button.custom-blue-button, a.custom-blue-button {
     text-decoration: none !important;
     background-color: $primary-color;
     border-color: $primary-color;
-    font-size: 1.2em;
-    padding: 20px 95px;
+    font-size: 1em;
+    padding: 15px 90px;
     -webkit-box-shadow: 0px 1px 3px #666666;
     -moz-box-shadow: 0px 1px 3px #666666;
     box-shadow: 0px 1px 3px #666666;
@@ -91,18 +91,35 @@ button.custom-blue-button, a.custom-blue-button {
 }
 .container {
     background: white;
+    border-left: 1px solid #dfe0e4;
+    border-right: 1px solid #dfe0e4;
+    
 }
 
 .container.header {
-    background: url(../assets/dropbox-for-business-files.png) repeat-x $primary-color 0px 500px;
     color: white;
+    background: $primary-color;
+    position: relative;
+    overflow: hidden;
     
+    > .row {
+        z-index: 2;
+        position: relative;
+    }
     
-    
-    // slide in the background image;
-    -webkit-animation: slidein 1s ease-in 1s forwards;
-    -moz-animation: slidein 1s ease-in 1s forwards;
-    animation: slidein 1s ease-in 1s forwards; 
+    img.bg-image {
+        position: absolute;
+        left: 0;
+        top: 0px;
+        width: 100%;
+        height: auto;
+        z-index: 1;
+        opacity: 0;
+        
+        -webkit-animation: slidein 1s ease-in 1s forwards;
+        -moz-animation: slidein 1s ease-in 1s forwards;
+        animation: slidein 1s ease-in 1s forwards;
+    }
     
     a {
         color: white;
@@ -117,9 +134,10 @@ button.custom-blue-button, a.custom-blue-button {
         
         ul {
             padding-left: 0;
+            margin-top: 30px;
             li {
                 list-style: none;
-                
+                padding-bottom: 15px;
                 a { 
                     &.active {
                         font-weight: 600;
@@ -131,11 +149,11 @@ button.custom-blue-button, a.custom-blue-button {
     }
     
     .center-column {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 70px;
+        padding-bottom: 70px;
         
         .inner-wrapper {
-            padding: 0px 110px;
+            padding: 0px 0px;
             
             a {
                 color: white;
@@ -166,21 +184,18 @@ button.custom-blue-button, a.custom-blue-button {
             margin-top: 10px;
             margin-bottom: 10px;
         }
-    }
-    
-    #key {
-/*        -webkit-filter: blur(5px); -moz-filter: blur(5px);-o-filter: blur(5px);-ms-filter: blur(5px);filter: blur(5px);
-        -moz-filter: blur(5px);
-        -o-filter: blur(5px);
-        -ms-filter: blur(5px);
-        filter: blur(5px);*/
         
+        .feature-desc {
+            line-height: 25px;
+        }
         
+        img {
+            width: 200px;
+            height: 182px;
+        }
     }
     
     #key.reset, #watch.reset, #devices.reset {
-
-    
         -moz-transition: margin-left 1s ease-in, opacity 1s ease-in, 1s -moz-filter linear; 
         -webkit-transition: margin-left 1s ease-in, opacity 1s ease-in, 1s -webkit-filter linear;  
         -ms-transition: margin-left 1s ease-in, opacity 1s ease-in, 1s -ms-filter linear;  
@@ -192,13 +207,6 @@ button.custom-blue-button, a.custom-blue-button {
         -ms-transition: all 0.5s cubic-bezier(.63,.01,.52,1.56);
         -o-transition: all 0.5s cubic-bezier(.63,.01,.52,1.56);
         transition: all 0.5s cubic-bezier(.63,.01,.52,1.56);
-        
-        
-/*        -webkit-filter: blur(0px);
-        -moz-filter: blur(0px);
-        -o-filter: blur(0px);
-        -ms-filter: blur(0px);
-        filter: blur(0px);*/
     }
 }
 
@@ -207,13 +215,14 @@ button.custom-blue-button, a.custom-blue-button {
     padding-bottom: 60px;
     
     .inner-wrapper {
-        width: 40%;
+        width: 100%;
         display: inline-block;
     }
     
     .carousel-wrapper {
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        position: relative;
         
         .slides-wrapper, .next, .prev {
             display: inline-block;
@@ -223,31 +232,24 @@ button.custom-blue-button, a.custom-blue-button {
             background: none repeat scroll 0% 0% transparent;
             overflow: hidden;
             position: relative;
-            width: 540px;
+            width: 100%;
             
             ul {
-                list-style: outside none none;
+                list-style: none;
                 margin: 0px;
                 padding: 0px;
                 position: relative;
                 transform: translateZ(0px);
+                height: 300px;
                 
                 li {
                     position: absolute;
                     top: 0px;
                     width: 100%;
-                    //margin-left: 100%;
-                    
-/*                    &.moving {
-                        -moz-transition: margin-left .5s ease-in; 
-                        -webkit-transition: margin-left .5s ease-in;  
-                        -ms-transition: margin-left .5s ease-in;  
-                        -o-transition: margin-left .5s ease-in;  
-                        transition: margin-left .5s ease-in;
-                    }*/
+                    margin-left: 100%;
                     
                     img {
-                        width: 540px;
+                        width: 100%;
                     }
                 }
             }
@@ -255,16 +257,26 @@ button.custom-blue-button, a.custom-blue-button {
         } 
         
         .prev {
+            position: absolute;
+            left: 15%;
+            top: 35%;
+            z-index: 999;
             img {
-                padding-bottom: 150px;
-                padding-right: 30px;
+                background: #FFF;
+                padding: 20px 5px;
+                opacity: 0.7;
             }
         }
         
         .next {
+            position: absolute;
+            right: 15%;
+            top: 35%;
+            z-index: 999;
             img {
-                padding-bottom: 150px;
-                padding-left: 30px;
+                background: #FFF;
+                padding: 20px 5px;
+                opacity: 0.7;
             }
         }
         
@@ -299,8 +311,9 @@ button.custom-blue-button, a.custom-blue-button {
     
     .carousel-text {
         margin-bottom: 45px;
-        width: 50%;
+        width: 100%;
         display: inline-block;
+        line-height: 25px;
     }
 }
 
@@ -308,6 +321,7 @@ button.custom-blue-button, a.custom-blue-button {
     $video-wrapper-height: 500px;
     background: url(../assets/video-still.jpg) no-repeat top center;
     height: $video-wrapper-height;
+    vertical-align: middle;
     
     img.play-button {
         position: relative;
@@ -334,14 +348,16 @@ button.custom-blue-button, a.custom-blue-button {
         background: black;
         height: 100%;
         width: 100%;
+        padding-top: 70px;
         video {
-            height: 100%;
+            width: 100%;
+            max-height: 100%;
         }
     }
 }
 
 .container.team-in-sync {
-    padding-top: 70px;
+    padding-top: 60px;
     padding-bottom: 75px;
     
     .custom-blue-button {
@@ -350,15 +366,16 @@ button.custom-blue-button, a.custom-blue-button {
     }
     
     a {
-        color: $primary-color;
+        color: $secondary-color;
     }
 }
 
 footer {
     .container.footer {
-        font-size: $small-text-size;
-        padding-top: 65px;
-        padding-bottom: 120px;
+        font-size: 18px;
+        line-height: 40px;
+        padding-top: 55px;
+        padding-bottom: 110px;
         border-top: 1px solid $tertiary-color;
         
         .footer-section-title {
@@ -442,15 +459,12 @@ footer {
         animation: menuout .5s ease-in-out;
         left: -$offcanvas-menu-width;
     }
-    
-    
-    
-    
+
     a.brand {
         display: block;
         padding: 10px 15px;
         font-size: 20px;
-        
+        float: left;
     }
     
     a {
@@ -478,38 +492,183 @@ footer {
             
         }
     }
+    
+    button.close-button {
+        display: block;
+        border: none;
+        color: white;
+        background: transparent;
+        padding: 8px;
+        cursor: pointer;
+        margin-right: 10px;
+        float: right;
+    }
 }
 
+@media (max-width: 991) {
+    .container.business {
+        margin-left: 15px; //xyz
+    }
+
+    #devices {//xyz
+        position: relative; margin-left: 0px; opacity: 1; -webkit-filter: blur(0px); -moz-filter: blur(0px);-o-filter: blur(0px);-ms-filter: blur(0px);filter: blur(0px);
+    }
+    #watch {
+        position: relative; margin-left: 0px; opacity: 1; -webkit-filter: blur(0px); -moz-filter: blur(0px);-o-filter: blur(0px);-ms-filter: blur(0px);filter: blur(0px);
+    }
+    #key {
+        position: relative; margin-left: 0px; opacity: 1; -webkit-filter: blur(0px); -moz-filter: blur(0px);-o-filter: blur(0px);-ms-filter: blur(0px);filter: blur(0px);
+    }
+}
+
+@media (min-width: 768px) {
+    .container.header {
+        .center-column {
+            padding-top: 100px;
+            padding-bottom: 180px;
+            .inner-wrapper {
+                padding: 0 110px;
+            }
+        }
+    }
+    
+    .container.video {
+        .video-container {
+            padding-top: 20px;
+        }
+    }
+    
+    .container.carousel {
+        .inner-wrapper {
+            width: 40%;
+        }
+        
+        .carousel-text {
+            width: 40%;
+        }
+    }
+
+    footer {
+        .container.footer {
+            font-size: $small-text-size;
+            line-height: 25px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .container.video {
+        .video-container {
+            padding: 0px;
+        }
+    }
+    
+    .container.carousel { 
+        .carousel-wrapper { 
+            .slides-wrapper {
+                width: 540px;
+            }
+            .prev { 
+                img {
+                    opacity: 1;
+                }
+            }
+            
+            .next { 
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+    .dropbox-business-features {//xyz
+        margin-left: -170px;
+        
+        &.normal {
+            margin-left: 15px;
+            
+            #devices {//xyz
+                position: relative; margin-left: 0px; opacity: 1; -webkit-filter: blur(0px); -moz-filter: blur(0px);-o-filter: blur(0px);-ms-filter: blur(0px);filter: blur(0px);
+            }
+            #watch {
+                position: relative; margin-left: 0px; opacity: 1; -webkit-filter: blur(0px); -moz-filter: blur(0px);-o-filter: blur(0px);-ms-filter: blur(0px);filter: blur(0px);
+            }
+            #key {
+                position: relative; margin-left: 0px; opacity: 1; -webkit-filter: blur(0px); -moz-filter: blur(0px);-o-filter: blur(0px);-ms-filter: blur(0px);filter: blur(0px);
+            }
+        }
+        
+    }
+    #devices {//xyz
+        position: relative; margin-left: 90px; opacity: 0; -webkit-filter: blur(1px); -moz-filter: blur(1px);-o-filter: blur(1px);-ms-filter: blur(1px);filter: blur(1px);
+    }
+    #watch {
+        position: absolute; margin-left: 420px; opacity: 0; -webkit-filter: blur(1px); -moz-filter: blur(1px);-o-filter: blur(1px);-ms-filter: blur(1px);filter: blur(1px);
+    }
+    #key {
+        position: absolute; margin-left: 750px; opacity: 0; -webkit-filter: blur(1px); -moz-filter: blur(1px);-o-filter: blur(1px);-ms-filter: blur(1px);filter: blur(1px);
+    }
+}
+
+/*
+ * Retina display
+*/
+@media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    .container.video {
+        background-image: url("../assets/video-still@2x.jpg");
+        background-size: 1500px 500px;
+
+        button.play-button {
+            width: 105px;
+            height: 105px;
+            background-image: url("../assets/player_large@2x.png");
+            background-size: 105px 105px;
+        }
+    }
+  }
 /*
  * Animations
 */
 @-webkit-keyframes slidein {
     from {
-        background-position: 0px 500px;
+        top: 500px;
+        opacity: 0;
     }
 
     to {
-        background-position: 0px 0px;
+        top: 0px;
+        opacity: 1;
     }
 }
 
 @-moz-keyframes slidein {
     from {
-       background-position: 0px 500px;
+        top: 500px;
+        opacity: 0;
     }
 
     to {
-        background-position: 0px 0px;
+        top: 0px;
+        opacity: 1;
     }
 }
 
 @keyframes slidein {
     from {
-        background-position: 0px 500px;
+        top: 500px;
+        opacity: 0;
     }
 
     to {
-        background-position: 0px 0px;
+        top: 0px;
+        opacity: 1;
     }
 }
 

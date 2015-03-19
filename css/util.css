@@ -38,6 +38,9 @@ and open the template in the editor.
 .visible-sm-block {
   display: none !important; }
 
+.clear {
+  clear: both; }
+
 @media (max-width: 767px) {
   .visible-xs-block {
     display: block !important; } }
